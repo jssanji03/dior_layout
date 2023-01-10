@@ -1,0 +1,122 @@
+// DataTable 基本樣式 //
+table tbody th, 
+table tbody td{
+    color: rgb(60, 60, 60);
+    padding: 15px 0px;
+}
+table{
+  // background-color: rgb(234, 245, 252);
+    thead{
+      width: 100%;
+      tr{
+        color: #ccc;
+        font-size: 16px;
+        th{
+          border-bottom: 1px solid rgb(224, 224, 224);
+          font-weight: 500 ;
+          font-size: 14px;
+          text-align: center;
+          padding: 8px;
+          vertical-align: middle;
+          line-height: 20px;
+          white-space:nowrap
+            }
+        }
+       
+    }
+    tbody{
+        tr{
+            padding: 0px;
+            // border: 1px solid rgba(8, 8, 8, 1);
+            background-color: #fff;
+            td{
+              vertical-align: middle;
+              outline: none;
+              padding: 8px;
+              white-space:nowrap;
+              border-bottom: 1px solid #000;
+              // text-align: center;
+          }
+        }
+    }
+}
+
+.dataTables_wrapper{
+  margin-top: 10px;
+}
+// DataTable 基本樣式 End //
+@mixin before($attr) {
+  &:before {
+      /*最重要的就是這串*/
+      @if $attr == data-th {
+        content: attr($attr) " : ";
+      }
+      @else{
+        content: attr($attr) " ";
+      }
+      /*最重要的就是這串*/
+      display: inline-block;
+      text-transform: uppercase;
+      width: 20%;
+      font-weight: 400;
+      margin-right: 10px;
+      text-align: start !important;
+    }
+}
+// DataTable Card樣式 Start //
+.datatable-RWDcard{
+  @media (max-width: 992px) {
+    border: none !important;
+    min-width: 100%;
+    /*針對tr去做隱藏*/
+    thead {
+      .tr-only-hide {
+        display: none !important;
+      }
+    }
+
+    tbody {
+      background-color: transparent;
+      /*讓tr變成區塊主要讓他有個區塊*/
+      tr {
+        width: 100%;
+        display: block;
+        font-size: 15px;
+        line-height: 15px;
+        border: none !important;
+        padding: 10px !important;
+        background-color: rgb(252, 252, 252);
+        margin-top: 20px;
+
+        // &:nth-child(odd) {
+        //   background-color: rgb(237, 237, 237);
+        // }
+
+        // &:nth-child(even) {
+        //   border-left: 10px solid #ccc;
+        //   background-color: rgb(252, 252, 252);
+          
+        // }
+        td {
+          text-align: center !important;
+          overflow: hidden;
+          width: 100%;
+          display: block;
+          border: none !important;
+          
+          &[data-th]{
+            @include before(data-th);
+          }
+          &[data-noth]{
+            @include before(data-noth);
+          }
+        }
+      }
+    }
+
+    tfoot {
+      display: none !important;
+    }
+  }
+}
+// DataTable Card樣式 End //

@@ -1,0 +1,94 @@
+@import './reboot/reset';
+@import './reboot/reboot';
+@import './reboot/plugin';
+@import './component/datatable';
+
+nav{
+    background-color: #FFF;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+input.form-control  {
+    width: 100%;
+    padding: 5px 15px 10px 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #888888;
+    border-radius: 0px;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #333;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    &:focus {
+        border-bottom: 2px solid #212121;
+        background-color: transparent;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+select{
+    width: 100%;
+    padding: 5px 15px 10px 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #888888;
+    border-radius: 0px;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #333;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.main-section {
+    .rightSide {
+        background-color: #FFF;
+        height: 100vh;
+    }
+
+    .btn-checkout {
+        color: rgb(82, 82, 82);
+        border: 1px solid #000;
+        border-radius: 20px;
+        padding: 10px 20px;
+
+        &:hover {
+            color: #000;
+            font-weight: 500;
+        }
+    }
+    .totalPrice{
+        background-color: #F6F6F6;
+        p{
+            line-height: 20px;
+            margin: 0px;
+        }
+    }
+}

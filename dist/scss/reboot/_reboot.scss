@@ -1,0 +1,23 @@
+* {
+    font-size: 13px;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.form-label {
+    // margin-bottom: 3px !important;
+    display: block;
+}

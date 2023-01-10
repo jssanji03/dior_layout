@@ -1,0 +1,263 @@
+@charset "UTF-8";
+@import '../../vendor/datatables-bs4/css/dataTables.bootstrap4.css';
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.2;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  font-size: 13px;
+}
+
+*:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.form-label {
+  display: block;
+}
+
+table tbody th,
+table tbody td {
+  color: rgb(60, 60, 60);
+  padding: 15px 0px;
+}
+
+table thead {
+  width: 100%;
+}
+table thead tr {
+  color: #ccc;
+  font-size: 16px;
+}
+table thead tr th {
+  border-bottom: 1px solid rgb(224, 224, 224);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px;
+  vertical-align: middle;
+  line-height: 20px;
+  white-space: nowrap;
+}
+table tbody tr {
+  padding: 0px;
+  background-color: #fff;
+}
+table tbody tr td {
+  vertical-align: middle;
+  outline: none;
+  padding: 8px;
+  white-space: nowrap;
+  border-bottom: 1px solid #000;
+}
+
+.dataTables_wrapper {
+  margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+  .datatable-RWDcard {
+    border: none !important;
+    min-width: 100%;
+    /*針對tr去做隱藏*/
+  }
+  .datatable-RWDcard thead .tr-only-hide {
+    display: none !important;
+  }
+  .datatable-RWDcard tbody {
+    background-color: transparent;
+    /*讓tr變成區塊主要讓他有個區塊*/
+  }
+  .datatable-RWDcard tbody tr {
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    line-height: 15px;
+    border: none !important;
+    padding: 10px !important;
+    background-color: rgb(252, 252, 252);
+    margin-top: 20px;
+  }
+  .datatable-RWDcard tbody tr td {
+    text-align: center !important;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    border: none !important;
+  }
+  .datatable-RWDcard tbody tr td[data-th]:before {
+    /*最重要的就是這串*/
+    content: attr(data-th) " : ";
+    /*最重要的就是這串*/
+    display: inline-block;
+    text-transform: uppercase;
+    width: 20%;
+    font-weight: 400;
+    margin-right: 10px;
+    text-align: start !important;
+  }
+  .datatable-RWDcard tbody tr td[data-noth]:before {
+    /*最重要的就是這串*/
+    content: attr(data-noth) " ";
+    /*最重要的就是這串*/
+    display: inline-block;
+    text-transform: uppercase;
+    width: 20%;
+    font-weight: 400;
+    margin-right: 10px;
+    text-align: start !important;
+  }
+  .datatable-RWDcard tfoot {
+    display: none !important;
+  }
+}
+
+nav {
+  background-color: #FFF;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+input.form-control {
+  width: 100%;
+  padding: 5px 15px 10px 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #888888;
+  border-radius: 0px;
+  appearance: unset;
+  -moz-appearance: unset;
+  -webkit-appearance: unset;
+  -o-appearance: unset;
+  -ms-appearance: unset;
+  outline: none;
+  -moz-outline: none;
+  -webkit-outline: none;
+  -o-outline: none;
+  -ms-outline: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #333;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+input.form-control:focus {
+  border-bottom: 2px solid #212121;
+  background-color: transparent;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+select {
+  width: 100%;
+  padding: 5px 15px 10px 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #888888;
+  border-radius: 0px;
+  appearance: unset;
+  -moz-appearance: unset;
+  -webkit-appearance: unset;
+  -o-appearance: unset;
+  -ms-appearance: unset;
+  outline: none;
+  -moz-outline: none;
+  -webkit-outline: none;
+  -o-outline: none;
+  -ms-outline: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #333;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.main-section .rightSide {
+  background-color: #FFF;
+  height: 100vh;
+}
+.main-section .btn-checkout {
+  color: rgb(82, 82, 82);
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+.main-section .btn-checkout:hover {
+  color: #000;
+  font-weight: 500;
+}
+.main-section .totalPrice {
+  background-color: #F6F6F6;
+}
+.main-section .totalPrice p {
+  line-height: 20px;
+  margin: 0px;
+}/*# sourceMappingURL=style.css.map */
