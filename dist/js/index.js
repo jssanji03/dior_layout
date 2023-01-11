@@ -60,50 +60,6 @@ function showOptions(event) {
     let chooseTarget = options.filter((e) => e.checked);
     console.log(chooseTarget);
     check(chooseTarget);
-    for (let item of chooseTarget) {
-        
-        // 先選好需要的元素
-        // if (item.id == 'office') {
-        //     document.querySelector("#option1").classList.remove('d-none')
-        //     remove("#paper");
-        //     remove("#email")
-        // }
-        // if (item.id == 'office' && item.id == 'paper') {
-        //     remove("#officename")
-        //     remove("#address")
-        // }
-        // switch (item.id) { 
-        //     case 'office':
-        //         console.log(item.id);
-        //         document.querySelector("#option1").classList.remove('d-none')
-        //         remove("#paper");
-        //         remove("#email")
-        //         break;
-        //     case 'office':
-        //     case 'paper':
-        //         remove("#officename")
-        //         remove("#address")
-        //         break;
-        //     case 'office':
-        //     case 'email':
-        //         add("#officename");
-        //         add("#address");
-        //         break;
-        //     case 'personal':
-        //         document.querySelector("#option1").classList.remove('d-none')
-        //         add("#email");
-        //         remove("#paper");
-        //         remove("#mobile");
-        //         remove("#donate");
-        //         break;
-        //     case 'personal':
-        //     case 'paper':
-        //         add("#officename");
-        //         remove("#username");
-        //         remove("#address");
-        //         break;
-        // }
-    }
 }
 function show(name) {
     document.querySelector(name).parentNode.classList.remove('d-none')
@@ -112,7 +68,6 @@ function hide(name) {
     document.querySelector(name).parentNode.classList.add('d-none')
 }
 function resetB2B() {
-    // chooseTarget = []
     show("#paper");
     show("#email");
     hide("#mobile");
@@ -122,7 +77,6 @@ function resetB2B() {
     hide("#address");
     hide("#officeTax");
     document.querySelector("#option2").classList.add('d-none');
-    // document.querySelector("#paper").checked = false;
 }
 function resetB2C() {
     show("#paper");
@@ -132,23 +86,26 @@ function resetB2C() {
     hide("#officeTax");
 }
 function removeRequire(name) {
-    if (document.querySelector(name).required = true) {
+    const ele = document.getElementsByName(name);
+    if (ele.required = true) {
         const Require = document.querySelectorAll(".controlRequire");
         Require.forEach((item) => {
-            console.log(item);
-            document.querySelector(name).removeAttribute('required')
             item.classList.add("d-none");
+        })
+        ele.forEach((item) => {
+            item.removeAttribute('required')
         })
     }
 }
 function addRequire(name) {
-    if (document.querySelector(name).required !== true) {
-        const Require = document.querySelectorAll(".controlRequire");
-        Require.forEach((item) => {
-            console.log(item);
-            item.classList.remove("d-none");
-        })
-    }
+    const ele = document.getElementsByName(name);
+    const Require = document.querySelectorAll(".controlRequire");
+    Require.forEach((item) => {
+        item.classList.remove("d-none");
+    })
+    ele.forEach((item) => {
+        item.setAttribute('required','')
+    })
 }
 function check(chooseTarget) {
     switch (true) {
@@ -159,14 +116,14 @@ function check(chooseTarget) {
                 break;
             }
             if (chooseTarget[1].id === 'paper') {
-                console.log("office&paper");
+                // console.log("office&paper");
                 resetB2B()
                 addRequire("#address");
                 show("#officename")
                 show("#address")
                 show("#officeTax")
             } else if(chooseTarget[1].id === 'email'){
-                console.log("office&email");
+                // console.log("office&email");
                 resetB2B()
                 show("#officeTax");
             }else {
@@ -187,22 +144,22 @@ function check(chooseTarget) {
                 hide("#officeTax");
                 show("#username");
                 show("#address");
-                addRequire("#username");
-                addRequire("#address");
+                addRequire("username");
+                addRequire("address");
             } else if (chooseTarget[1].id === 'mobile') {
                 document.querySelector("#option2").classList.remove('d-none');
                 hide("#officename");
                 hide("#officeTax");
                 show("#username");
                 show("#address");
-                removeRequire("#username");
-                removeRequire("#address");
+                removeRequire("username");
+                removeRequire("address");
             }else if (chooseTarget[1].id === 'donate') {
                 document.querySelector("#option2").classList.add('d-none');
                 show("#username");
                 show("#address");
-                removeRequire("#username");
-                removeRequire("#address");
+                removeRequire("username");
+                removeRequire("address");
             }
             break;
         default:
