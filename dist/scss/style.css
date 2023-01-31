@@ -88,18 +88,13 @@ table thead {
   width: 100%;
 }
 table thead tr {
-  color: #ccc;
+  color: rgb(0, 0, 0);
   font-size: 16px;
 }
 table thead tr th {
-  border-bottom: 1px solid rgb(224, 224, 224);
   font-weight: 500;
-  font-size: 14px;
-  text-align: center;
   padding: 8px;
-  vertical-align: middle;
-  line-height: 20px;
-  white-space: nowrap;
+  border-bottom: 1px solid rgb(213, 213, 213);
 }
 table tbody tr {
   padding: 0px;
@@ -108,15 +103,18 @@ table tbody tr {
 table tbody tr td {
   vertical-align: middle;
   outline: none;
-  padding: 8px;
+  padding: 12px !important;
   white-space: nowrap;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgb(213, 213, 213);
 }
 
 .dataTables_wrapper {
   margin-top: 10px;
 }
 
+.datatable-RWDcard tbody td:first-child {
+  background-color: #F3F3F5;
+}
 @media (max-width: 992px) {
   .datatable-RWDcard {
     border: none !important;
@@ -172,6 +170,13 @@ table tbody tr td {
   .datatable-RWDcard tfoot {
     display: none !important;
   }
+}
+
+.total-table tbody td {
+  line-height: 35px;
+}
+.total-table tbody td:last-child {
+  text-align: end;
 }
 
 nav {
@@ -245,10 +250,11 @@ select {
   height: 100vh;
 }
 .main-section .btn-checkout {
-  color: rgb(82, 82, 82);
+  color: rgb(255, 255, 255);
   border: 1px solid #000;
   border-radius: 20px;
   padding: 10px 20px;
+  background-color: #000;
 }
 .main-section .btn-checkout:hover {
   color: #000;

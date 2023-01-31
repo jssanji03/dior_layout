@@ -3,12 +3,12 @@
 @import './reboot/plugin';
 @import './component/datatable';
 
-nav{
+nav {
     background-color: #FFF;
     border-bottom: 1px solid rgb(226, 226, 226);
 }
 
-input.form-control  {
+input.form-control {
     width: 100%;
     padding: 5px 15px 10px 15px;
     background-color: transparent;
@@ -33,6 +33,7 @@ input.form-control  {
     -ms-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+
     &:focus {
         border-bottom: 2px solid #212121;
         background-color: transparent;
@@ -40,7 +41,8 @@ input.form-control  {
         box-shadow: none !important;
     }
 }
-select{
+
+select {
     width: 100%;
     padding: 5px 15px 10px 15px;
     background-color: transparent;
@@ -74,19 +76,22 @@ select{
     }
 
     .btn-checkout {
-        color: rgb(82, 82, 82);
+        color: rgb(255, 255, 255);
         border: 1px solid #000;
         border-radius: 20px;
         padding: 10px 20px;
+        background-color: #000;
 
         &:hover {
             color: #000;
             font-weight: 500;
         }
     }
-    .totalPrice{
+
+    .totalPrice {
         background-color: #F6F6F6;
-        p{
+
+        p {
             line-height: 20px;
             margin: 0px;
         }
