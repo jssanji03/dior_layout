@@ -110,25 +110,25 @@
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="personal" value="個人發票"
-                    required>
+                  checked required>
                   <label class="form-check-label" for="personal">個人發票</label>
                 </div>
                 <div class="invalid-feedback">invalid feedback text</div>
               </div>
               <!-- 交付選項 -->
-              <div class="col-12 mb-3 d-none" id="option1">
+              <div class="col-12 mb-3" id="option1">
                 <label for="username" class="form-label"><span class="text-danger">* </span>交付選項</label>
-                <div class="form-check form-check-inline d-none">
+                <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="methodOptions" id="email" value="E-mail" required>
                   <label class="form-check-label" for="email">E-mail</label>
                 </div>
-                <div class="form-check form-check-inline d-none">
-                  <input class="form-check-input" type="radio" name="methodOptions" id="mobile" value="載具" required>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="methodOptions" id="mobile" value="載具" checked required>
                   <label class="form-check-label" for="mobile">載具</label>
                 </div>
                 <div class="form-check form-check-inline ">
                   <div class="row">
-                    <div class="col-auto d-none">
+                    <div class="col-auto">
                       <input class="form-check-input" type="radio" name="methodOptions" id="donate" value="捐贈" required>
                       <label class="form-check-label" for="donate">捐贈</label>
                     </div>
@@ -139,10 +139,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 mb-3 d-none" id="option2">
+              <div class="col-12 mb-3" id="option2">
                 <label for="username" class="form-label"><span class="text-danger require">* </span>載具類型</label>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="carrierOptions" id="carrier1" value="會員載具" required>
+                  <input class="form-check-input" type="radio" name="carrierOptions" id="carrier1" value="會員載具" required checked>
                   <label class="form-check-label" for="carrier1">會員載具</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -172,7 +172,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 mb-3 d-none">
+              <div class="col-12 mb-3">
                 <label for="username" class="form-label"><span class="text-danger controlRequire">* </span>姓名</label>
                 <input type="text" name="username" class="form-control" id="username" required>
                 <div class="invalid-feedback">
@@ -186,7 +186,7 @@
                   User name is required.
                 </div>
               </div>
-              <div class="col-12 mb-3 d-none">
+              <div class="col-12 mb-3">
                 <label for="address" class="form-label">地址</label>
                 <div class="city-selector-set row" id="address">
                   <div class="col-6">

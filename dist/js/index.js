@@ -58,6 +58,9 @@ function showOptions() {
     let options = [...this.elements]; // form 表單下的所有物件存成陣列
     // 取出點選的元素
     let chooseTarget = options.filter((e) => e.checked);
+    chooseTarget.forEach(item=>{
+        item.checked = true;
+    })
     check(chooseTarget);
 }
 function show(name) {
@@ -117,26 +120,6 @@ function check(chooseTarget) {
             }else {
                 resetB2B()
             }
-            // if (chooseTarget.length == 1) {
-            //     console.log("office");
-            //     show("#officename")
-            //     show("#address")
-            //     show("#officeTax")
-            // }
-            // if (chooseTarget[1].id === 'paper') {
-            //     console.log("office&paper");
-            //     resetB2B()
-            //     addRequire("#address");
-            //     show("#officename")
-            //     show("#address")
-            //     show("#officeTax")
-            // } else if(chooseTarget[1].id === 'email'){
-            //     console.log("office&email");
-            //     resetB2B()
-            //     show("#officeTax");
-            // }else {
-            //     resetB2B()
-            // }
             break;
         case (chooseTarget[0].id ==='personal'):
             document.querySelector("#option1").classList.remove('d-none');
@@ -170,5 +153,6 @@ function check(chooseTarget) {
 
 function init() {
     showInput();
+    removeRequire("#username");
 }
 init()
