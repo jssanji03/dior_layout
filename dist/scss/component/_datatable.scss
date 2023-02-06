@@ -6,36 +6,32 @@ table tbody td {
 }
 
 table {
-
   // background-color: rgb(234, 245, 252);
   thead {
     width: 100%;
-
     tr {
       color: rgb(0, 0, 0);
       font-size: 16px;
-
       th {
         font-weight: 500;
-        padding: 8px;
-        border-bottom: 1px solid rgb(213, 213, 213);
+        border-bottom: 1px solid #E5E5E5 !important;
       }
     }
-
   }
-
   tbody {
     tr {
       padding: 0px;
       background-color: #fff;
 
       td {
-        vertical-align: middle;
         outline: none;
-        padding: 12px !important;
-        white-space: nowrap;
         border-bottom: 1px solid rgb(213, 213, 213);
-        // border-top: 1px solid rgb(213, 213, 213);
+        &:last-child {
+          padding-right: 24px;
+        }
+        &:first-child{
+          text-align: center;
+        }
       }
     }
   }
@@ -46,96 +42,139 @@ table {
 }
 
 // DataTable 基本樣式 End //
-@mixin before($attr) {
-  &:before {
+// @mixin before($attr) {
+//   &:before {
 
-    /*最重要的就是這串*/
-    @if $attr ==data-th {
-      content: attr($attr) " : ";
-    }
+//     /*最重要的就是這串*/
+//     @if $attr ==data-th {
+//       content: attr($attr) " : ";
+//     }
 
-    @else {
-      content: attr($attr) " ";
-    }
+//     @else {
+//       content: attr($attr) " ";
+//     }
 
-    /*最重要的就是這串*/
-    display: inline-block;
-    text-transform: uppercase;
-    width: 20%;
-    font-weight: 400;
-    margin-right: 10px;
-    text-align: start !important;
-  }
-}
+//     /*最重要的就是這串*/
+//     display: inline-block;
+//     text-transform: uppercase;
+//     width: 20%;
+//     font-weight: 400;
+//     margin-right: 10px;
+//     text-align: start !important;
+//   }
+// }
 
 // DataTable Card樣式 Start //
-.datatable-RWDcard {
+.order-table {
   tbody {
     td:first-child {
       background-color: #F3F3F5;
+      text-align: center;
+      vertical-align: middle;
+      @media #{$breakpoint-lg} {
+        width: 241px;
+        height: 260px;
+      }
+      @media #{$breakpoint-md} {
+        width: 133px ;
+        height: 260px;
+      }
+      @media #{$breakpoint-xs} {
+        width: 133px;
+        height: 152px;
+      }
+    }
+    td:nth-child(2){
+      @media #{$breakpoint-lg} {
+        padding-top: 100px;
+      }
+      @media #{$breakpoint-md},#{$breakpoint-xs} {
+        padding-top: 20px;
+      }
+    }
+    td:nth-child(3){
+      @media #{$breakpoint-lg} {
+        padding-top: 100px;
+      }
+      @media #{$breakpoint-md},#{$breakpoint-xs} {
+        width: 133px;
+        padding-top: 20px;
+        padding-right: 0px;
+        vertical-align: bottom;
+      }
     }
   }
 
-  @media (max-width: 992px) {
-    border: none !important;
-    min-width: 100%;
+  // @media (max-width: 992px) {
+  //   border: none !important;
+  //   min-width: 100%;
 
-    /*針對tr去做隱藏*/
-    thead {
-      .tr-only-hide {
-        display: none !important;
-      }
-    }
+  //   /*針對tr去做隱藏*/
+  //   thead {
+  //     .tr-only-hide {
+  //       display: none !important;
+  //     }
+  //   }
 
-    tbody {
-      background-color: transparent;
+  //   tbody {
+  //     background-color: transparent;
 
-      /*讓tr變成區塊主要讓他有個區塊*/
-      tr {
-        width: 100%;
-        display: block;
-        font-size: 15px;
-        line-height: 15px;
-        border: none !important;
-        padding: 10px !important;
-        background-color: rgb(252, 252, 252);
-        margin-top: 20px;
+  //     /*讓tr變成區塊主要讓他有個區塊*/
+  //     tr {
+  //       width: 100%;
+  //       display: block;
+  //       font-size: 15px;
+  //       line-height: 15px;
+  //       border: none !important;
+  //       padding: 10px !important;
+  //       background-color: rgb(252, 252, 252);
+  //       margin-top: 20px;
 
-        td {
-          text-align: center !important;
-          overflow: hidden;
-          width: 100%;
-          display: block;
-          border: none !important;
+  //       td {
+  //         text-align: center !important;
+  //         overflow: hidden;
+  //         width: 100%;
+  //         display: block;
+  //         border: none !important;
 
-          &[data-th] {
-            @include before(data-th);
-          }
+  //         &[data-th] {
+  //           @include before(data-th);
+  //         }
 
-          &[data-noth] {
-            @include before(data-noth);
-          }
-        }
+  //         &[data-noth] {
+  //           @include before(data-noth);
+  //         }
+  //       }
 
-      }
-    }
+  //     }
+  //   }
 
-    tfoot {
-      display: none !important;
-    }
-  }
+  //   tfoot {
+  //     display: none !important;
+  //   }
+  // }
 }
 
 // DataTable Card樣式 End //
 
 .total-table {
   tbody {
-    td {
-      line-height: 35px;
+    tr{
+      @media #{$breakpoint-lg} {
+        height: 99px;
+      }
+      
+        @media #{$breakpoint-md},
+        #{$breakpoint-xs} {
+          height: 20px;
+        }
+      
     }
-
-    td:last-child {
-      text-align: end;
+    td{
+      vertical-align: middle;
+      &:last-child {
+        text-align: end;
+      }
     }
   }
 }

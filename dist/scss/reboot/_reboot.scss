@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;500;600&display=swap');
+
+// Fonts
+$font-family-sans-serif: "Gothic A1",
+    sans-serif,
+    // Safari for macOS and iOS (San Francisco)
+    -apple-system,
+    // Chrome < 56 for macOS (San Francisco)
+    BlinkMacSystemFont,
+    // Windows
+    "Segoe UI",
+    // Android
+    Roboto,
+    // Basic web fallback
+    "Helvetica Neue",
+    Arial,
+    // Linux
+    "Noto Sans",
+    "Liberation Sans",
+    // Sans serif fallback
+    sans-serif,
+    // Emoji fonts
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji" !default;
 * {
     font-size: 13px;
 }
@@ -11,6 +37,7 @@ html,
 body {
     width: 100%;
     margin: 0;
+    font-family: $font-family-sans-serif !important;
 }
 
 .mt-80 {
@@ -20,4 +47,7 @@ body {
 .form-label {
     // margin-bottom: 3px !important;
     display: block;
+}
+nav{
+    height: 73px !important;
 }

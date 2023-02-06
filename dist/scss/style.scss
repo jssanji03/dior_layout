@@ -1,5 +1,6 @@
 @import './reboot/reset';
 @import './reboot/reboot';
+@import './reboot/responsive';
 @import './reboot/plugin';
 @import './component/datatable';
 
@@ -81,7 +82,12 @@ select {
         border-radius: 20px;
         padding: 10px 20px;
         background-color: #000;
-
+        @media #{$breakpoint-lg} {
+            width: 50%;
+        }
+        @media #{$breakpoint-md},#{$breakpoint-xs} {
+            width: 100%;
+        }
         &:hover {
             color: #000;
             font-weight: 500;
