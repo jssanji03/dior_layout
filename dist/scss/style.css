@@ -89,6 +89,11 @@ nav {
   height: 73px !important;
 }
 
+b {
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @media only screen and (min-width:768px) and (max-width:991px) {
   .orderMenu {
     width: 761px !important;
@@ -125,7 +130,7 @@ table tbody tr td {
   border-bottom: 1px solid rgb(213, 213, 213);
 }
 table tbody tr td:last-child {
-  padding-right: 24px;
+  text-align: end;
 }
 table tbody tr td:first-child {
   text-align: center;
@@ -157,6 +162,9 @@ table tbody tr td:first-child {
     width: 133px;
     height: 152px;
   }
+}
+.order-table tbody td:nth-child(2) {
+  padding-left: 28px;
 }
 @media only screen and (min-width:992px) and (max-width:1920px) {
   .order-table tbody td:nth-child(2) {
@@ -194,6 +202,9 @@ table tbody tr td:first-child {
 }
 .total-table tbody td {
   vertical-align: middle;
+}
+.total-table tbody td:first-child {
+  text-align: start;
 }
 .total-table tbody td:last-child {
   text-align: end;
