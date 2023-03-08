@@ -2,33 +2,6 @@
 let get = (tag) => document.querySelector(`#${tag}`);
 let form = get('bookingForm'); // form 表單
 form.addEventListener('change', showOptions);
-// function submitOrder(event) {
-//     event.preventDefault(); //必須取消預設行為
-//     let component = event.target.id; 
-//     let display = get(component); // 取該節點的 DOM
-//     let showInput = get(`${component}_input`); // 取 Input節點的 DOM
-//     let options = [...this.elements]; // form 表單下的所有物件存成陣列
-//     // 取出點選的元素
-//     let chooseTarget = options.filter((e) => e.checked);
-//     if (chooseTarget) {
-//         for(let item of chooseTarget){
-//             // 先選好需要的元素
-//             switch (item.id) { 
-//                 case 'mobile':
-//                     showInput.style.display = 'block';
-//                     break;
-//                 case 'carrier2':
-//                     showInput.style.display = 'block';
-//                     break;
-//                 case 'carrier3':
-//                     showInput.style.display = 'block';
-//                     break;
-//             }
-//         }
-//     } else {
-//         console.log(options);
-//     }
-// }
 const donate = document.querySelector("#donate");
 const donate_Input = document.querySelector("#donate_input");
 const carrier2 = document.querySelector("#carrier2");
@@ -58,6 +31,7 @@ function showOptions() {
     let options = [...this.elements]; // form 表單下的所有物件存成陣列
     // 取出點選的元素
     let chooseTarget = options.filter((e) => e.checked);
+    console.log(chooseTarget);
     chooseTarget.forEach(item=>{
         item.checked = true;
     })
@@ -70,22 +44,19 @@ function hide(name) {
     document.querySelector(name).parentNode.classList.add('d-none')
 }
 function resetB2B() {
-    // chooseTarget = []
-    hide("#email");
     hide("#mobile");
     hide("#donate");
-    show("#username");
+    hide("#username");
     show("#officename");
     show("#address");
     hide("#officeTax");
     document.querySelector("#option2").classList.add('d-none');
-    // document.querySelector("#paper").checked = false;
 }
 function resetB2C() {
     show("#mobile");
     show("#donate");
-    hide("#email");
     hide("#officeTax");
+    removeRequire("#address");
 }
 function removeRequire(name) {
     if (document.querySelector(name).required = true) {
@@ -109,9 +80,10 @@ function check(chooseTarget) {
     console.log(chooseTarget);
     switch (true) {
         case (chooseTarget[0].id ==='office'):
-            document.querySelector("#option1").classList.add('d-none')
+            document.querySelector("#option1").classList.add('d-none');
+            console.log("office");
+            hide("#username");
             if (chooseTarget.length == 1) {
-                console.log("office");
                 show("#officename")
                 show("#address")
                 show("#officeTax")
