@@ -11,19 +11,26 @@ const carrier3_Input = document.querySelector("#carrier3_input");
 function showInput() {
     document.addEventListener("change", () => {
         if (donate.checked) {
-            donate_Input.classList.remove('d-none')
+            donate_Input.classList.remove('d-none');
         } else {
-            donate_Input.classList.add('d-none')
+            donate_Input.classList.add('d-none');
+            
         }
         if (carrier2.checked) {
-            carrier2_Input.classList.remove('d-none')
-        } else {
-            carrier2_Input.classList.add('d-none')
+            carrier2_Input.classList.remove('d-none');
+            carrier3_Input.classList.add('d-none');
+            carrier2_Input.required = true;
+            carrier3_Input.required = false;
+            // addRequire("#carrier2_input"); 
+            // removeRequire("#carrier3_input");
         }
         if (carrier3.checked) {
-            carrier3_Input.classList.remove('d-none')
-        } else {
-            carrier3_Input.classList.add('d-none')
+            carrier3_Input.classList.remove('d-none');
+            carrier2_Input.classList.add('d-none');
+            carrier3_Input.required = true;
+            carrier2_Input.required = false;
+            // addRequire("#carrier3_input"); 
+            // removeRequire("#carrier2_input");
         }
     })
 }
@@ -77,7 +84,6 @@ function addRequire(name) {
     }
 }
 function check(chooseTarget) {
-    console.log(chooseTarget);
     switch (true) {
         case (chooseTarget[0].id ==='office'):
             document.querySelector("#option1").classList.add('d-none');
@@ -96,7 +102,6 @@ function check(chooseTarget) {
         case (chooseTarget[0].id ==='personal'):
             document.querySelector("#option1").classList.remove('d-none');
             resetB2C();
-            console.log("personal");
             if (chooseTarget.length == 1) {
                 break;
             }
@@ -110,6 +115,7 @@ function check(chooseTarget) {
                 removeRequire("#username");
                 removeRequire("#address");
             } else if (chooseTarget[1].id === 'donate') {
+                console.log("donate");
                 document.querySelector("#option2").classList.add('d-none');
                 show("#username");
                 show("#address");
